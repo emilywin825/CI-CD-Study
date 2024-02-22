@@ -43,10 +43,6 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Build with Gradle
-        run: ./gradlew build 
-        shell: bash # ci는 여기까지
-
       - name: create application.yml
         # if: contains(github.ref, 'main')
         run: |
@@ -54,6 +50,11 @@ jobs:
           touch ./application.yml
           echo "${{ secrets.PROPERTIES }}" > ./application.yml
         shell: bash
+
+
+      - name: Build with Gradle
+        run: ./gradlew build 
+        shell: bash # ci는 여기까지
 
       # - name: Build With Gradle
       #   if: contains(github.ref, 'main')
