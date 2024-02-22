@@ -13,6 +13,6 @@ public class Controller {
     @GetMapping("/api")
     public String apiTest() {
         System.out.println("성공");
-        return "갓진우완벽진우미친놈";
+        return "안녕안녕안녕 성공~!~!~!~!~";
     }
 }
